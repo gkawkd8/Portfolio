@@ -21,7 +21,6 @@
 		8B997C8222EC253600D344C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B997C8122EC253600D344C0 /* AppDelegate.swift */; };
 		8B997C8422EC253600D344C0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B997C8322EC253600D344C0 /* FirstViewController.swift */; };
 		8B997C8722EC253600D344C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B997C8522EC253600D344C0 /* Main.storyboard */; };
-		8B997C8922EC253700D344C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B997C8822EC253700D344C0 /* Assets.xcassets */; };
 		8B997C8C22EC253700D344C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B997C8A22EC253700D344C0 /* LaunchScreen.storyboard */; };
 		8B997C9422EC283400D344C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B997C9322EC283400D344C0 /* LoginViewController.swift */; };
 		8B997C9822EC325D00D344C0 /* KategorieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B997C9722EC325D00D344C0 /* KategorieViewController.swift */; };
@@ -30,6 +29,7 @@
 		8BB69B3C22F2AE1700C43700 /* weather.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB69B3B22F2AE1700C43700 /* weather.png */; };
 		8BB69B3E22F2AE3D00C43700 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB69B3D22F2AE3D00C43700 /* map.png */; };
 		8BD14BDA22F1575D00DCAB9E /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD14BD922F1575D00DCAB9E /* AlertExtension.swift */; };
+		8BDB7689235A0E100049CDC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDB7688235A0E100049CDC9 /* Assets.xcassets */; };
 		D2187AF9231D0CCE00141001 /* movie2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2187AF8231D0CCE00141001 /* movie2.png */; };
 		D2187AFD231D0D4700141001 /* datelocation2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2187AFA231D0D4400141001 /* datelocation2.png */; };
 		D2187AFE231D0D4700141001 /* food2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2187AFB231D0D4500141001 /* food2.png */; };
@@ -89,7 +89,6 @@
 		8B997C8122EC253600D344C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B997C8322EC253600D344C0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		8B997C8622EC253600D344C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8B997C8822EC253700D344C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B997C8B22EC253700D344C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B997C8D22EC253700D344C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B997C9322EC283400D344C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +99,7 @@
 		8BB69B3B22F2AE1700C43700 /* weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather.png; sourceTree = "<group>"; };
 		8BB69B3D22F2AE3D00C43700 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		8BD14BD922F1575D00DCAB9E /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
+		8BDB7688235A0E100049CDC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Assets.xcassets; sourceTree = "<group>"; };
 		D2187AF8231D0CCE00141001 /* movie2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie2.png; sourceTree = "<group>"; };
 		D2187AFA231D0D4400141001 /* datelocation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = datelocation2.png; sourceTree = "<group>"; };
 		D2187AFB231D0D4500141001 /* food2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food2.png; sourceTree = "<group>"; };
@@ -277,7 +277,7 @@
 				8BAA2F4922F0100A0045D78F /* Briging-Header.h */,
 				8B997C8D22EC253700D344C0 /* Info.plist */,
 				8B7E598E22ED7AA100EDC902 /* GoogleService-Info.plist */,
-				8B997C8822EC253700D344C0 /* Assets.xcassets */,
+				8BDB7688235A0E100049CDC9 /* Assets.xcassets */,
 			);
 			path = TeamProject;
 			sourceTree = "<group>";
@@ -387,6 +387,7 @@
 				D2E46EF82318B339000DEF26 /* pencil.png in Resources */,
 				D2187AFF231D0D4700141001 /* balloon2.png in Resources */,
 				8BB69B3E22F2AE3D00C43700 /* map.png in Resources */,
+				8BDB7689235A0E100049CDC9 /* Assets.xcassets in Resources */,
 				8B7E598F22ED7AA200EDC902 /* GoogleService-Info.plist in Resources */,
 				8BB69B3C22F2AE1700C43700 /* weather.png in Resources */,
 				D27DF5B52321F6EC0043FD89 /* left-arrow.png in Resources */,
@@ -399,7 +400,6 @@
 				D27DF5BD232231280043FD89 /* likeoff.png in Resources */,
 				D26DAD2B2317A2C600C244A6 /* back.png in Resources */,
 				8B833CF322F92A5700133316 /* sunny.png in Resources */,
-				8B997C8922EC253700D344C0 /* Assets.xcassets in Resources */,
 				D28731B323389102003ED386 /* profile.png in Resources */,
 				D2187AFD231D0D4700141001 /* datelocation2.png in Resources */,
 				8B7E59B222EDB36900EDC902 /* coffee.png in Resources */,
