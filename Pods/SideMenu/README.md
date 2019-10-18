@@ -3,14 +3,17 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/SideMenu.svg?style=flat-square)](http://cocoapods.org/pods/SideMenu)
 [![Platform](https://img.shields.io/cocoapods/p/SideMenu.svg?style=flat-square)](http://cocoapods.org/pods/SideMenu)
+[![Total Downloads](https://img.shields.io/cocoapods/dt/SideMenu.svg?style=social)](http://cocoapods.org/pods/SideMenu)
+[![Monthly Downloads](https://img.shields.io/cocoapods/dm/SideMenu.svg?style=social)](http://cocoapods.org/pods/SideMenu)
+[![Weekly Downloads](https://img.shields.io/cocoapods/dw/SideMenu.svg?style=social)](http://cocoapods.org/pods/SideMenu)
 
-### If you like SideMenu, give it a ★ at the top right of this page.
-#### SideMenu needs your help! If you're a skilled iOS developer and want to help maintain this repository and answer issues asked by the community, please [send me an email](mailto:yo@massappeal.co?subject=I%20Want%20To%20Help!).
+### If you like SideMenu, give it a ★ at the top right of its [GitHub](https://github.com/jonkykong/SideMenu) page.
+#### Using SideMenu in your app? [Send](mailto:yo@massappeal.co?subject=SideMenu%20in%20action!) me a link to your app in the app store!
 
 > Hi, I'm Jon Kent and I am an iOS designer, developer, and mobile strategist. I love coffee and play the drums.
 > * [**Hire me**](mailto:yo@massappeal.co?subject=Let's%20build%20something%20amazing) to help you make cool stuff. *Note: If you're having a problem with SideMenu, please open an [issue](https://github.com/jonkykong/SideMenu/issues/new) and do not email me.*
 > * Check out my [website](http://massappeal.co) to see some of my other projects.
-> * Building and maintaining this **free** library takes a lot of my time and **saves you time**. Please consider paying it forward by supporting me with a small amount to my [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40jonkent%2eme&lc=US&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted). (only **13** people have donated since 12/23/15 but **thank you** to those who have!)
+> * Building and maintaining this **free** library takes a lot of my time and **saves you time**. Please consider paying it forward by supporting me with a small amount to my [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40jonkent%2eme&lc=US&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted). (only **4** people have donated since 12/23/15 😕 but **thank you** to those who have!)
 
 * **[Overview](#overview)**
   * [Preview Samples](#preview-samples) 
@@ -50,7 +53,7 @@ Check out the example project to see it in action!
 
 ## Requirements
 - [x] Xcode 10.
-- [x] Swift 5.
+- [x] Swift 4.2.
 - [x] iOS 10 or higher.
 
 ## Installation
@@ -71,11 +74,11 @@ use_frameworks!
 
 pod 'SideMenu'
 
-# For Swift 5 use:
-# pod 'SideMenu', '~> 6.0.0'
+# For Swift 4 (no longer maintained), use:
+# pod 'SideMenu', '~> 4.0.0'
 
-# For Swift 4.2 (no longer maintained) use:
-# pod 'SideMenu', '~> 5.0.0'
+# For Swift 3 (no longer maintained), use:
+# pod 'SideMenu', '~> 2.3.4'
 ```
 
 Then, run the following command:
@@ -119,158 +122,190 @@ First:
 import SideMenu
 ```
 
-From a button, do something like this:
+In your view controller's `viewDidLoad` event, do something like this (**IMPORTANT: If you're seeing a black menu when you use gestures, read this section carefully!**):
 ``` swift
-// Define the menu
-let menu = UISideMenuNavigationController(rootViewController: YourViewController)
+// Define the menus
+let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: YourViewController)
 // UISideMenuNavigationController is a subclass of UINavigationController, so do any additional configuration 
 // of it here like setting its viewControllers. If you're using storyboards, you'll want to do something like:
-// let menu = storyboard!.instantiateViewController(withIdentifier: "RightMenu") as! UISideMenuNavigationController
-present(menu, animated: true, completion: nil)
-```
+// let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
+SideMenuManager.default.menuLeftNavigationController = menuLeftNavigationController
 
+let menuRightNavigationController = UISideMenuNavigationController(rootViewController: YourViewController)
+// UISideMenuNavigationController is a subclass of UINavigationController, so do any additional configuration
+// of it here like setting its viewControllers. If you're using storyboards, you'll want to do something like:
+// let menuRightNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenuNavigationController") as! UISideMenuNavigationController
+SideMenuManager.default.menuRightNavigationController = menuRightNavigationController
+
+// (Optional) Enable gestures. The left and/or right menus must be set up above for these to work.
+// Note that these continue to work on the Navigation Controller independent of the view controller it displays!
+SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+
+// (Optional) Prevent status bar area from turning black when menu appears:
+SideMenuManager.default.menuFadeStatusBar = false
+```
+Then from a button, do something like this:
+``` swift
+present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+```
 To dismiss a menu programmatically, do something like this:
 ``` swift
 dismiss(animated: true, completion: nil)
 ```
-
-To use gestures you have to use the `SideMenuManager`. In your `AppDelegate` do something like this:
-``` swift
-// Define the menus
-let leftMenuNavigationController = UISideMenuNavigationController(rootViewController: YourViewController)
-SideMenuManager.default.leftMenuNavigationController = leftMenuNavigationController
-
-let rightMenuNavigationController = UISideMenuNavigationController(rootViewController: YourViewController)
-SideMenuManager.default.rightMenuNavigationController = rightMenuNavigationController
-
-// Setup gestures: the left and/or right menus must be set up (above) for these to work.
-// Note that these continue to work on the Navigation Controller independent of the view controller it displays!
-SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
-SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
-
-// (Optional) Prevent status bar area from turning black when menu appears:
-menuLeftNavigationController.statusBarEndAlpha = 0
-// Copy all settings to the other menu
-menuRightNavigationController.settings = menuLeftNavigationController.settings
-```
 That's it.
 ### Customization
 #### SideMenuManager
-`SideMenuManager` supports the following:
+Just type ` SideMenuManager.default.menu...` and code completion will show you everything you can customize (for Objective-C, use `SideMenuManager.defaultManager.menu...`). Defaults values are shown below for reference:
 ``` swift
+/**
+The push style of the menu.
+
+There are six modes in MenuPushStyle:
+- defaultBehavior: The view controller is pushed onto the stack.
+- popWhenPossible: If a view controller already in the stack is of the same class as the pushed view controller, the stack is instead popped back to the existing view controller. This behavior can help users from getting lost in a deep navigation stack.
+- preserve: If a view controller already in the stack is of the same class as the pushed view controller, the existing view controller is pushed to the end of the stack. This behavior is similar to a UITabBarController.
+- preserveAndHideBackButton: Same as .preserve and back buttons are automatically hidden.
+- replace: Any existing view controllers are released from the stack and replaced with the pushed view controller. Back buttons are automatically hidden. This behavior is ideal if view controllers require a lot of memory or their state doesn't need to be preserved.
+- subMenu: Unlike all other behaviors that push using the menu's presentingViewController, this behavior pushes view controllers within the menu.  Use this behavior if you want to display a sub menu.
+*/
+open var menuPushStyle: MenuPushStyle = .defaultBehavior
+
+/**
+The presentation mode of the menu.
+
+There are four modes in MenuPresentMode:
+- menuSlideIn: Menu slides in over of the existing view.
+- viewSlideOut: The existing view slides out to reveal the menu.
+- viewSlideInOut: The existing view slides out while the menu slides in.
+- menuDissolveIn: The menu dissolves in over the existing view controller.
+*/
+open var menuPresentMode: MenuPresentMode = .viewSlideOut
+
+/// Prevents the same view controller (or a view controller of the same class) from being pushed more than once. Defaults to true.
+open var menuAllowPushOfSameClassTwice = true
+
+/**
+Width of the menu when presented on screen, showing the existing view controller in the remaining space. Default is 75% of the screen width.
+
+Note that each menu's width can be overridden using the `menuWidth` property on any `UISideMenuNavigationController` instance.
+*/
+open var menuWidth: CGFloat = max(round(min((appScreenRect.width), (appScreenRect.height)) * 0.75), 240)
+
+/// Duration of the animation when the menu is presented without gestures. Default is 0.35 seconds.
+open var menuAnimationPresentDuration: Double = 0.35
+
+/// Duration of the animation when the menu is dismissed without gestures. Default is 0.35 seconds.
+open var menuAnimationDismissDuration: Double = 0.35
+
+/// Duration of the remaining animation when the menu is partially dismissed with gestures. Default is 0.35 seconds.
+open var menuAnimationCompleteGestureDuration: Double = 0.35
+
+/// Amount to fade the existing view controller when the menu is presented. Default is 0 for no fade. Set to 1 to fade completely.
+open var menuAnimationFadeStrength: CGFloat = 0
+
+/// The amount to scale the existing view controller or the menu view controller depending on the `menuPresentMode`. Default is 1 for no scaling. Less than 1 will shrink, greater than 1 will grow.
+open var menuAnimationTransformScaleFactor: CGFloat = 1
+
+/// The background color behind menu animations. Depending on the animation settings this may not be visible. If `menuFadeStatusBar` is true, this color is used to fade it. Default is black.
+open var menuAnimationBackgroundColor: UIColor?
+
+/// The shadow opacity around the menu view controller or existing view controller depending on the `menuPresentMode`. Default is 0.5 for 50% opacity.
+open var menuShadowOpacity: Float = 0.5
+
+/// The shadow color around the menu view controller or existing view controller depending on the `menuPresentMode`. Default is black.
+open var menuShadowColor = UIColor.black
+
+/// The radius of the shadow around the menu view controller or existing view controller depending on the `menuPresentMode`. Default is 5.
+open var menuShadowRadius: CGFloat = 5
+
+/// The left menu swipe to dismiss gesture.
+open weak var menuLeftSwipeToDismissGesture: UIPanGestureRecognizer?
+
+/// The right menu swipe to dismiss gesture.
+open weak var menuRightSwipeToDismissGesture: UIPanGestureRecognizer?
+
+/// Enable or disable gestures that would swipe to dismiss the menu. Default is true.
+open var menuEnableSwipeGestures: Bool = true
+
+/// Enable or disable interaction with the presenting view controller while the menu is displayed. Enabling may make it difficult to dismiss the menu or cause exceptions if the user tries to present and already presented menu. Default is false.
+open var menuPresentingViewControllerUserInteractionEnabled: Bool = false
+
+/// The strength of the parallax effect on the existing view controller. Does not apply to `menuPresentMode` when set to `ViewSlideOut`. Default is 0.
+open var menuParallaxStrength: Int = 0
+
+/// Draws the `menuAnimationBackgroundColor` behind the status bar. Default is true.
+open var menuFadeStatusBar = true
+
+/// The animation options when a menu is displayed. Ignored when displayed with a gesture.
+open var menuAnimationOptions: UIViewAnimationOptions = .curveEaseInOut
+
+///	Animation curve of the remaining animation when the menu is partially dismissed with gestures. Default is .easeIn.
+open var menuAnimationCompletionCurve: UIViewAnimationCurve = .easeIn
+
+/// The animation spring damping when a menu is displayed. Ignored when displayed with a gesture.
+open var menuAnimationUsingSpringWithDamping: CGFloat = 1
+
+/// The animation initial spring velocity when a menu is displayed. Ignored when displayed with a gesture.
+open var menuAnimationInitialSpringVelocity: CGFloat = 1
+
+/** 
+Automatically dismisses the menu when another view is pushed from it.
+
+Note: to prevent the menu from dismissing when presenting, set modalPresentationStyle = .overFullScreen
+of the view controller being presented in storyboard or during its initalization.
+*/
+open var menuDismissOnPush = true
+
+/// Forces menus to always animate when appearing or disappearing, regardless of a pushed view controller's animation.
+open var menuAlwaysAnimate = false
+
+/**
+The blur effect style of the menu if the menu's root view controller is a UITableViewController or UICollectionViewController.
+
+- Note: If you want cells in a UITableViewController menu to show vibrancy, make them a subclass of UITableViewVibrantCell and set the `blurEffectStyle` of each cell to SideMenuManager.default.menuBlurEffectStyle.
+*/
+open var menuBlurEffectStyle: UIBlurEffectStyle?
+
 /// The left menu.
 open var menuLeftNavigationController: UISideMenuNavigationController?
+
 /// The right menu.
-public var menuRightNavigationController: UISideMenuNavigationController?
+open var menuRightNavigationController: UISideMenuNavigationController?
+
 /**
- Adds screen edge gestures for both left and right sides to a view to present a menu.
+Adds screen edge gestures to a view to present a menu.
 
- - Parameter toView: The view to add gestures to.
+- Parameter toView: The view to add gestures to.
+- Parameter forMenu: The menu (left or right) you want to add a gesture for. If unspecified, gestures will be added for both sides.
 
- - Returns: The array of screen edge gestures added to `toView`.
- */
-@discardableResult public func addScreenEdgePanGesturesToPresent(toView view: UIView) -> [UIScreenEdgePanGestureRecognizer]
+- Returns: The array of screen edge gestures added to `toView`.
+*/
+@discardableResult open func menuAddScreenEdgePanGesturesToPresent(toView: UIView, forMenu:UIRectEdge? = nil) -> [UIScreenEdgePanGestureRecognizer]
+
 /**
- Adds screen edge gestures to a view to present a menu.
+Adds a pan edge gesture to a view to present menus.
 
- - Parameter toView: The view to add gestures to.
- - Parameter forMenu: The menu (left or right) you want to add a gesture for.
+- Parameter toView: The view to add a pan gesture to.
 
- - Returns: The screen edge gestures added to `toView`.
- */
-@discardableResult public func addScreenEdgePanGesturesToPresent(toView view: UIView, forMenu side: PresentDirection) -> UIScreenEdgePanGestureRecognizer
-/**
- Adds a pan edge gesture to a view to present menus.
-
- - Parameter toView: The view to add a pan gesture to.
-
- - Returns: The pan gesture added to `toView`.
- */
-@discardableResult public func addPanGestureToPresent(toView view: UIView) -> UIPanGestureRecognizer
+- Returns: The pan gesture added to `toView`.
+*/
+@discardableResult open func menuAddPanGestureToPresent(toView: UIView) -> UIPanGestureRecognizer
 ```
 #### UISideMenuNavigationController
-`UISideMenuNavigationController` supports the following:
+`UISideMenuNavigationController` supports the following customizations and properties:
 ``` swift
-/// Prevents the same view controller (or a view controller of the same class) from being pushed more than once. Defaults to true.
-var allowPushOfSameClassTwice: Bool = true
-/// Forces menus to always animate when appearing or disappearing, regardless of a pushed view controller's animation.
-var alwaysAnimate: Bool = true
-/// The animation options when a menu is displayed. Ignored when displayed with a gesture.
-var animationOptions: UIView.AnimationOptions = .curveEaseInOut
-/**
- The blur effect style of the menu if the menu's root view controller is a UITableViewController or UICollectionViewController.
+/// SideMenuManager instance associated with this menu. Default is `SideMenuManager.default`. This property cannot be changed after the menu has loaded.
+open weak var sideMenuManager: SideMenuManager! = SideMenuManager.default
 
- - Note: If you want cells in a UITableViewController menu to show vibrancy, make them a subclass of UITableViewVibrantCell.
- */
-var blurEffectStyle: UIBlurEffect.Style? = nil
-/// Duration of the remaining animation when the menu is partially dismissed with gestures. Default is 0.35 seconds.
-var completeGestureDuration: Double = 0.35
-/// Animation curve of the remaining animation when the menu is partially dismissed with gestures. Default is .easeIn.
-var completionCurve: UIView.AnimationCurve = .curveEaseInOut
-/// Duration of the animation when the menu is dismissed without gestures. Default is 0.35 seconds.
-var dismissDuration: Double = 0.35
-/// Automatically dismisses the menu when another view is presented from it.
-var dismissOnPresent: Bool = true
-/// Automatically dismisses the menu when another view controller is pushed from it.
-var dismissOnPush: Bool = true
-/// Automatically dismisses the menu when the screen is rotated.
-var dismissOnRotation: Bool = true
-/// Automatically dismisses the menu when app goes to the background.
-var dismissWhenBackgrounded: Bool = true
-/// Enable or disable gestures that would swipe to dismiss the menu. Default is true.
-var enableSwipeGestures: Bool = true
-/// The animation initial spring velocity when a menu is displayed. Ignored when displayed with a gesture.
-var initialSpringVelocity: CGFloat = 1
+/// Width of the menu when presented on screen, showing the existing view controller in the remaining space. Default is zero. When zero, `sideMenuManager.menuWidth` is used. This property cannot be changed while the isHidden property is false.
+@IBInspectable open var menuWidth: CGFloat = 0
+
 /// Whether the menu appears on the right or left side of the screen. Right is the default. This property cannot be changed after the menu has loaded.
-var leftSide: Bool = false
-/// Width of the menu when presented on screen, showing the existing view controller in the remaining space. Default is zero.
-var menuWidth: CGFloat = 240
-/// Duration of the animation when the menu is presented without gestures. Default is 0.35 seconds.
-var presentDuration: Double = 0.35
-/// Enable or disable interaction with the presenting view controller while the menu is displayed. Enabling may make it difficult to dismiss the menu or cause exceptions if the user tries to present and already presented menu. `presentingViewControllerUseSnapshot` must also set to false. Default is false.
-var presentingViewControllerUserInteractionEnabled: Bool = false
-/// Use a snapshot for the presenting vierw controller while the menu is displayed. Useful when layout changes occur during transitions. Not recommended for apps that support rotation. Default is false.
-var presentingViewControllerUseSnapshot: Bool = false
-/// The presentation style of the menu.
-var presentationStyle: SideMenuPresentStyle = .viewSlideOut
-/**
- The push style of the menu.
+@IBInspectable open var leftSide: Bool = false
 
- There are six modes in MenuPushStyle:
- - defaultBehavior: The view controller is pushed onto the stack.
- - popWhenPossible: If a view controller already in the stack is of the same class as the pushed view controller, the stack is instead popped back to the existing view controller. This behavior can help users from getting lost in a deep navigation stack.
- - preserve: If a view controller already in the stack is of the same class as the pushed view controller, the existing view controller is pushed to the end of the stack. This behavior is similar to a UITabBarController.
- - preserveAndHideBackButton: Same as .preserve and back buttons are automatically hidden.
- - replace: Any existing view controllers are released from the stack and replaced with the pushed view controller. Back buttons are automatically hidden. This behavior is ideal if view controllers require a lot of memory or their state doesn't need to be preserved..
- - subMenu: Unlike all other behaviors that push using the menu's presentingViewController, this behavior pushes view controllers within the menu.  Use this behavior if you want to display a sub menu.
- */
-var pushStyle: MenuPushStyle = .default
-/// Draws `presentationStyle.backgroundColor` behind the status bar. Default is 1.
-var statusBarEndAlpha: CGFloat = 1
-/// The animation spring damping when a menu is displayed. Ignored when displayed with a gesture.
-var usingSpringWithDamping: CGFloat = 1
 /// Indicates if the menu is anywhere in the view hierarchy, even if covered by another view controller.
-var isHidden: Bool
-```
-#### SideMenuPresentStyle
-There are 8 pre-defined `SideMenuPresentStyle` options:
-``` swift
-/// Menu slides in over the existing view.
-static let menuSlideIn = SideMenuPresentStyle
-/// The existing view slides out to reveal the menu underneath.
-static let viewSlideOut = SideMenuPresentStyle
-/// The existing view slides out while the menu slides in.
-static let viewSlideOutMenuIn = SideMenuPresentStyle
-/// The menu dissolves in over the existing view.
-static let menuDissolveIn = SideMenuPresentStyle
-/// The existing view slides out while the menu partially slides in.
-static let viewSlideOutMenuPartialIn = SideMenuPresentStyle
-/// The existing view slides out while the menu slides out from under it.
-static let viewSlideOutMenuOut = SideMenuPresentStyle
-/// The existing view slides out while the menu partially slides out from under it.
-static let viewSlideOutMenuPartialOut = SideMenuPresentStyle
-/// The existing view slides out and shrinks to reveal the menu underneath.
-static let viewSlideOutMenuZoom = SideMenuPresentStyle
+open var isHidden: Bool
 ```
 #### UISideMenuNavigationControllerDelegate
 To receive notifications when a menu is displayed from a view controller, have it adhere to the  `UISideMenuNavigationControllerDelegate` protocol:
@@ -292,15 +327,12 @@ extension MyViewController: UISideMenuNavigationControllerDelegate {
     func sideMenuDidDisappear(menu: UISideMenuNavigationController, animated: Bool) {
         print("SideMenu Disappeared! (animated: \(animated))")
     }
+
 }
 ```
 *Note: setting the  `sideMenuDelegate` property on `UISideMenuNavigationController` is optional. If your view controller adheres to the protocol then the methods will be called automatically.*
 ### Advanced
-<details>
-<summary>Click for Details</summary>
-
-#### Multiple SideMenuManagers
-For simplicity, `SideMenuManager.default` serves as the primary instance as most projects will only need one menu across all screens. If you need to show a different SideMenu using gestures, such as from a modal view controller presented from a previous SideMenu, do the following:
+For simplicity, `SideMenuManager.default` serves as the primary instance as most projects will only need one menu across all screens. If you need to show a different SideMenu, such as from a modal view controller presented from a previous SideMenu, do the following:
 1. Declare a variable containing your custom `SideMenuManager` instance. You may want it to define it globally and configure it in your app delegate if menus will be used on multiple screens.
 ``` swift
 let customSideMenuManager = SideMenuManager()
@@ -317,6 +349,7 @@ class MySideMenuNavigationController: UISideMenuNavigationController {
 
         sideMenuManager = customSideMenuManager
     }
+
 }
 ```
 Alternatively, you can set  `sideMenuManager` from the view controller that segues to your UISideMenuNavigationController:
@@ -327,61 +360,10 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 }
 ```
-*Important: displaying SideMenu instances directly over each other is not supported. Use `menuPushStyle = .subMenu` to display multi-level menus instead.*
-
-### SideMenuPresentationStyle
-If you want to create your own custom presentation style, create a subclass of `SideMenuPresentationStyle` and set your menu's `presentationStyle` to it:
-```swift
-class MyPresentStyle: SideMenuPresentationStyle {
-
-    override init() {
-        super.init()
-        /// Background color behind the views and status bar color
-        backgroundColor = .black
-        /// The starting alpha value of the menu before it appears
-        menuStartAlpha = 1
-        /// Whether or not the menu is on top. If false, the presenting view is on top. Shadows are applied to the view on top.
-        menuOnTop = false
-        /// The amount the menu is translated along the x-axis. Zero is stationary, negative values are off-screen, positive values are on screen.
-        menuTranslateFactor = 0
-        /// The amount the menu is scaled. Less than one shrinks the view, larger than one grows the view.
-        menuScaleFactor = 1
-        /// The color of the shadow applied to the top most view.
-        onTopShadowColor = .black
-        /// The radius of the shadow applied to the top most view.
-        onTopShadowRadius = 5
-        /// The opacity of the shadow applied to the top most view.
-        onTopShadowOpacity = 0
-        /// The offset of the shadow applied to the top most view.
-        onTopShadowOffset = .zero
-        /// The ending alpha of the presenting view when the menu is fully displayed.
-        presentingEndAlpha = 1
-        /// The amount the presenting view is translated along the x-axis. Zero is stationary, negative values are off-screen, positive values are on screen.
-        presentingTranslateFactor = 0
-        /// The amount the presenting view is scaled. Less than one shrinks the view, larger than one grows the view.
-        presentingScaleFactor = 1
-        /// The strength of the parallax effect on the presenting view once the menu is displayed.
-        presentingParallaxStrength = .zero
-    }
-
-    /// This method is called just before the presentation transition begins. Use this to setup any animations. The super method does not need to be called.
-    override func presentationTransitionWillBegin(to presentedViewController: UIViewController, from presentingViewController: UIViewController) {}
-    /// This method is called during the presentation animation. Use this to animate anything alongside the menu animation. The super method does not need to be called.
-    override func presentationTransition(to presentedViewController: UIViewController, from presentingViewController: UIViewController) {}
-    /// This method is called when the presentation transition ends. Use this to finish any animations. The super method does not need to be called.
-    override func presentationTransitionDidEnd(to presentedViewController: UIViewController, from presentingViewController: UIViewController, _ completed: Bool) {}
-    /// This method is called just before the dismissal transition begins. Use this to setup any animations. The super method does not need to be called.
-    override func dismissalTransitionWillBegin(to presentedViewController: UIViewController, from presentingViewController: UIViewController) {}
-    /// This method is called during the dismissal animation. Use this to animate anything alongside the menu animation. The super method does not need to be called.
-    override func dismissalTransition(to presentedViewController: UIViewController, from presentingViewController: UIViewController) {}
-    /// This method is called when the dismissal transition ends. Use this to finish any animations. The super method does not need to be called.
-    override func dismissalTransitionDidEnd(to presentedViewController: UIViewController, from presentingViewController: UIViewController, _ completed: Bool) {}
-}
-```
-</details>
-
+*Important: displaying SideMenu instances directly over each other is not supported. Use `menuPushStyle = .subMenu` instead.*
 ## Known Issues
-* Issue [#258](https://github.com/jonkykong/SideMenu/issues/258). Using `presentingViewControllerUseSnapshot` can help preserve the experience.
+* Issue [#258](https://github.com/jonkykong/SideMenu/issues/258).
+* Don't try to change the status bar appearance when presenting a menu. When used with quick gestures/animations, it causes the presentation animation to not complete properly and locks the UI. This was fixed in iOS 9.3. See [radar 21961293](http://www.openradar.me/21961293) for more information.
 
 ## Thank You
 A special thank you to everyone that has [contributed](https://github.com/jonkykong/SideMenu/graphs/contributors) to this library to make it better. Your support is appreciated!

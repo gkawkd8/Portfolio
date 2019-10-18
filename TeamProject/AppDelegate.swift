@@ -11,6 +11,12 @@ import Firebase
 import GoogleMaps
 import GooglePlaces
 
+struct UserInfo {
+    var loginID: String = ""
+    var profileImageUrl: String = ""
+    var name: String = ""
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var mySideMenu: SideMenuNavigationController? = nil
     lazy var mainViewController: MainViewController? = nil
-    
+    var profileImage: UIImage? = nil
+    var userInfo: UserInfo = UserInfo()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -58,16 +65,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return true
     }
-
+    
     private func application(_ app: UIApplication, open url: URL, options: [String : AnyObject] = [:]) -> Bool {
         if KOSession.isKakaoAccountLoginCallback(url) {
             return KOSession.handleOpen(url)
         }
         return true
+        
+        if KOSession.isKakaoAccountLoginCallback(url) {
+            return KOSession.handleOpen(url)
+        }
+        return false
     }
 
     func applicationProtectedDataDidBecomeAvailable(_ application: UIApplication) {
         KOSession.handleDidBecomeActive()
+    }
+    
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        if KOSession.isKakaoAccountLoginCallback(url) {
+            return KOSession.handleOpen(url)
+        }
+        
+        return false
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if KOSession.isKakaoAccountLoginCallback(url) {
+            return KOSession.handleOpen(url)
+        }
+        
+        return false
     }
 }
 

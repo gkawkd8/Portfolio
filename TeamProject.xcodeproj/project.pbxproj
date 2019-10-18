@@ -15,11 +15,9 @@
 		8B7E59B022EDB18B00EDC902 /* balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7E59AC22EDB18A00EDC902 /* balloon.png */; };
 		8B7E59B222EDB36900EDC902 /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7E59B122EDB36900EDC902 /* coffee.png */; };
 		8B7E59B422EDB3DD00EDC902 /* datelocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B7E59B322EDB3DC00EDC902 /* datelocation.png */; };
-		8B833CF122F9284A00133316 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B833CF022F9284A00133316 /* WeatherViewController.swift */; };
 		8B833CF322F92A5700133316 /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B833CF222F92A5700133316 /* sunny.png */; };
 		8B833CF722F9474900133316 /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B833CF622F9474900133316 /* SideMenuNavigationController.swift */; };
 		8B833CF922F947DF00133316 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B833CF822F947DF00133316 /* SideMenuViewController.swift */; };
-		8B833CFB22F94B1800133316 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B833CFA22F94B1800133316 /* menu.png */; };
 		8B997C8222EC253600D344C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B997C8122EC253600D344C0 /* AppDelegate.swift */; };
 		8B997C8422EC253600D344C0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B997C8322EC253600D344C0 /* FirstViewController.swift */; };
 		8B997C8722EC253600D344C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B997C8522EC253600D344C0 /* Main.storyboard */; };
@@ -31,8 +29,44 @@
 		8BAA2F4822F00A240045D78F /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAA2F4722F00A240045D78F /* KakaoOpenSDK.framework */; };
 		8BB69B3C22F2AE1700C43700 /* weather.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB69B3B22F2AE1700C43700 /* weather.png */; };
 		8BB69B3E22F2AE3D00C43700 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB69B3D22F2AE3D00C43700 /* map.png */; };
-		8BB69B4622F2C7F600C43700 /* couple.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB69B4522F2C7F600C43700 /* couple.png */; };
 		8BD14BDA22F1575D00DCAB9E /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD14BD922F1575D00DCAB9E /* AlertExtension.swift */; };
+		D2187AF9231D0CCE00141001 /* movie2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2187AF8231D0CCE00141001 /* movie2.png */; };
+		D2187AFD231D0D4700141001 /* datelocation2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2187AFA231D0D4400141001 /* datelocation2.png */; };
+		D2187AFE231D0D4700141001 /* food2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2187AFB231D0D4500141001 /* food2.png */; };
+		D2187AFF231D0D4700141001 /* balloon2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2187AFC231D0D4600141001 /* balloon2.png */; };
+		D2261AEC2330DB51004601BB /* DatePlaceInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8B46A23138854008EF028 /* DatePlaceInformationViewController.swift */; };
+		D2261AED2330DB89004601BB /* DatePlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C8B4682313845C008EF028 /* DatePlaceViewController.swift */; };
+		D257785D23012E66009613E4 /* PerformanceInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D257785C23012E66009613E4 /* PerformanceInformationViewController.swift */; };
+		D25E8C1822FD515900E42EC1 /* performance.png in Resources */ = {isa = PBXBuildFile; fileRef = D25E8C1722FD515900E42EC1 /* performance.png */; };
+		D26DAD2023179C5300C244A6 /* Main.png in Resources */ = {isa = PBXBuildFile; fileRef = D26DAD1F23179C5300C244A6 /* Main.png */; };
+		D26DAD2223179E1300C244A6 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DAD2123179E1300C244A6 /* ForgotPasswordViewController.swift */; };
+		D26DAD2423179E5C00C244A6 /* couple.png in Resources */ = {isa = PBXBuildFile; fileRef = D26DAD2323179E5C00C244A6 /* couple.png */; };
+		D26DAD2723179ECC00C244A6 /* ProfileCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = D26DAD2523179ECA00C244A6 /* ProfileCamera.png */; };
+		D26DAD2823179ECC00C244A6 /* userProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = D26DAD2623179ECB00C244A6 /* userProfile.png */; };
+		D26DAD2B2317A2C600C244A6 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D26DAD292317A2C600C244A6 /* back.png */; };
+		D26DAD2C2317A2C600C244A6 /* sidemenu.png in Resources */ = {isa = PBXBuildFile; fileRef = D26DAD2A2317A2C600C244A6 /* sidemenu.png */; };
+		D26DAD2E2317B7EA00C244A6 /* FoodCafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DAD2D2317B7EA00C244A6 /* FoodCafeViewController.swift */; };
+		D26DAD302317BB5800C244A6 /* FoodCafeInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DAD2F2317BB5800C244A6 /* FoodCafeInformationViewController.swift */; };
+		D26DAD342317CE6F00C244A6 /* FoodCafePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DAD332317CE6F00C244A6 /* FoodCafePageViewController.swift */; };
+		D26DAD362317CED700C244A6 /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26DAD352317CED700C244A6 /* PageController.swift */; };
+		D271476222FAA95500866B39 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D271475F22FAA95400866B39 /* MovieViewController.swift */; };
+		D271476322FAA95500866B39 /* MovieSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D271476022FAA95500866B39 /* MovieSearchViewController.swift */; };
+		D271476422FAA95500866B39 /* MovieInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D271476122FAA95500866B39 /* MovieInformationViewController.swift */; };
+		D271476622FAA98800866B39 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D271476522FAA98800866B39 /* CollectionViewCell.swift */; };
+		D271477F22FABA3C00866B39 /* map2.png in Resources */ = {isa = PBXBuildFile; fileRef = D271477E22FABA3C00866B39 /* map2.png */; };
+		D27DF5B32321F2450043FD89 /* foodcafe.png in Resources */ = {isa = PBXBuildFile; fileRef = D27DF5B22321F2450043FD89 /* foodcafe.png */; };
+		D27DF5B52321F6EC0043FD89 /* left-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D27DF5B42321F6EC0043FD89 /* left-arrow.png */; };
+		D27DF5B7232209F40043FD89 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27DF5B6232209F40043FD89 /* LikeViewController.swift */; };
+		D27DF5BD232231280043FD89 /* likeoff.png in Resources */ = {isa = PBXBuildFile; fileRef = D27DF5BC232231280043FD89 /* likeoff.png */; };
+		D27DF5BF232233820043FD89 /* likeon.png in Resources */ = {isa = PBXBuildFile; fileRef = D27DF5BE232233820043FD89 /* likeon.png */; };
+		D27DF5C32322400B0043FD89 /* right-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D27DF5C22322400B0043FD89 /* right-arrow.png */; };
+		D28731B323389102003ED386 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = D28731B223389102003ED386 /* profile.png */; };
+		D2C8B46D2313AFDD008EF028 /* hand.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8B46C2313AFDD008EF028 /* hand.png */; };
+		D2D2F1B62334802A0048BA05 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D2F1B52334802A0048BA05 /* extension.swift */; };
+		D2E46EF82318B339000DEF26 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E46EF72318B339000DEF26 /* pencil.png */; };
+		D2E46EFA2318FF00000DEF26 /* PageChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E46EF92318FF00000DEF26 /* PageChangeViewController.swift */; };
+		D2F4510B22FBEA74009AA412 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4510A22FBEA74009AA412 /* PerformanceViewController.swift */; };
+		D2F4510D22FBFB98009AA412 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4510C22FBFB98009AA412 /* TableViewCell.swift */; };
 		E61222692AB4A1E5E69DF19F /* Pods_TeamProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44AA6452107575FD2BD1792B /* Pods_TeamProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,11 +82,9 @@
 		8B7E59AC22EDB18A00EDC902 /* balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balloon.png; sourceTree = "<group>"; };
 		8B7E59B122EDB36900EDC902 /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
 		8B7E59B322EDB3DC00EDC902 /* datelocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = datelocation.png; sourceTree = "<group>"; };
-		8B833CF022F9284A00133316 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		8B833CF222F92A5700133316 /* sunny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunny.png; sourceTree = "<group>"; };
 		8B833CF622F9474900133316 /* SideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationController.swift; sourceTree = "<group>"; };
 		8B833CF822F947DF00133316 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
-		8B833CFA22F94B1800133316 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		8B997C7E22EC253600D344C0 /* TeamProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B997C8122EC253600D344C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B997C8322EC253600D344C0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -67,8 +99,44 @@
 		8BAA2F4922F0100A0045D78F /* Briging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Briging-Header.h"; sourceTree = "<group>"; };
 		8BB69B3B22F2AE1700C43700 /* weather.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather.png; sourceTree = "<group>"; };
 		8BB69B3D22F2AE3D00C43700 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
-		8BB69B4522F2C7F600C43700 /* couple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = couple.png; sourceTree = "<group>"; };
 		8BD14BD922F1575D00DCAB9E /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
+		D2187AF8231D0CCE00141001 /* movie2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie2.png; sourceTree = "<group>"; };
+		D2187AFA231D0D4400141001 /* datelocation2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = datelocation2.png; sourceTree = "<group>"; };
+		D2187AFB231D0D4500141001 /* food2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food2.png; sourceTree = "<group>"; };
+		D2187AFC231D0D4600141001 /* balloon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = balloon2.png; sourceTree = "<group>"; };
+		D257785C23012E66009613E4 /* PerformanceInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceInformationViewController.swift; sourceTree = "<group>"; };
+		D25E8C1722FD515900E42EC1 /* performance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = performance.png; sourceTree = "<group>"; };
+		D26DAD1F23179C5300C244A6 /* Main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Main.png; sourceTree = "<group>"; };
+		D26DAD2123179E1300C244A6 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		D26DAD2323179E5C00C244A6 /* couple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = couple.png; sourceTree = "<group>"; };
+		D26DAD2523179ECA00C244A6 /* ProfileCamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileCamera.png; sourceTree = "<group>"; };
+		D26DAD2623179ECB00C244A6 /* userProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userProfile.png; sourceTree = "<group>"; };
+		D26DAD292317A2C600C244A6 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		D26DAD2A2317A2C600C244A6 /* sidemenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidemenu.png; sourceTree = "<group>"; };
+		D26DAD2D2317B7EA00C244A6 /* FoodCafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCafeViewController.swift; sourceTree = "<group>"; };
+		D26DAD2F2317BB5800C244A6 /* FoodCafeInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCafeInformationViewController.swift; sourceTree = "<group>"; };
+		D26DAD332317CE6F00C244A6 /* FoodCafePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCafePageViewController.swift; sourceTree = "<group>"; };
+		D26DAD352317CED700C244A6 /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
+		D271475F22FAA95400866B39 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		D271476022FAA95500866B39 /* MovieSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieSearchViewController.swift; sourceTree = "<group>"; };
+		D271476122FAA95500866B39 /* MovieInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInformationViewController.swift; sourceTree = "<group>"; };
+		D271476522FAA98800866B39 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		D271477E22FABA3C00866B39 /* map2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map2.png; sourceTree = "<group>"; };
+		D27DF5B22321F2450043FD89 /* foodcafe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foodcafe.png; sourceTree = "<group>"; };
+		D27DF5B42321F6EC0043FD89 /* left-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow.png"; sourceTree = "<group>"; };
+		D27DF5B6232209F40043FD89 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
+		D27DF5BC232231280043FD89 /* likeoff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likeoff.png; sourceTree = "<group>"; };
+		D27DF5BE232233820043FD89 /* likeon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = likeon.png; sourceTree = "<group>"; };
+		D27DF5C22322400B0043FD89 /* right-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right-arrow.png"; sourceTree = "<group>"; };
+		D28731B223389102003ED386 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		D2C8B4682313845C008EF028 /* DatePlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePlaceViewController.swift; sourceTree = "<group>"; };
+		D2C8B46A23138854008EF028 /* DatePlaceInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePlaceInformationViewController.swift; sourceTree = "<group>"; };
+		D2C8B46C2313AFDD008EF028 /* hand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hand.png; sourceTree = "<group>"; };
+		D2D2F1B52334802A0048BA05 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		D2E46EF72318B339000DEF26 /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
+		D2E46EF92318FF00000DEF26 /* PageChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageChangeViewController.swift; sourceTree = "<group>"; };
+		D2F4510A22FBEA74009AA412 /* PerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
+		D2F4510C22FBFB98009AA412 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +161,68 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8B57E2FF235442EA0013BEF5 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				D271475F22FAA95400866B39 /* MovieViewController.swift */,
+				D271476122FAA95500866B39 /* MovieInformationViewController.swift */,
+				D271476022FAA95500866B39 /* MovieSearchViewController.swift */,
+			);
+			path = Movie;
+			sourceTree = "<group>";
+		};
+		8B57E301235443120013BEF5 /* FoodCafe */ = {
+			isa = PBXGroup;
+			children = (
+				D26DAD2D2317B7EA00C244A6 /* FoodCafeViewController.swift */,
+				D26DAD332317CE6F00C244A6 /* FoodCafePageViewController.swift */,
+				D26DAD2F2317BB5800C244A6 /* FoodCafeInformationViewController.swift */,
+			);
+			path = FoodCafe;
+			sourceTree = "<group>";
+		};
+		8B57E3022354432F0013BEF5 /* DatePlace */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8B4682313845C008EF028 /* DatePlaceViewController.swift */,
+				D2C8B46A23138854008EF028 /* DatePlaceInformationViewController.swift */,
+			);
+			path = DatePlace;
+			sourceTree = "<group>";
+		};
+		8B57E303235443410013BEF5 /* Performance */ = {
+			isa = PBXGroup;
+			children = (
+				D2F4510A22FBEA74009AA412 /* PerformanceViewController.swift */,
+				D257785C23012E66009613E4 /* PerformanceInformationViewController.swift */,
+			);
+			path = Performance;
+			sourceTree = "<group>";
+		};
 		8B7E599022ED82D200EDC902 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				8B833CFA22F94B1800133316 /* menu.png */,
+				D2187AF8231D0CCE00141001 /* movie2.png */,
+				D27DF5BE232233820043FD89 /* likeon.png */,
+				D27DF5BC232231280043FD89 /* likeoff.png */,
+				D2187AFC231D0D4600141001 /* balloon2.png */,
+				D2187AFA231D0D4400141001 /* datelocation2.png */,
+				D2187AFB231D0D4500141001 /* food2.png */,
+				D25E8C1722FD515900E42EC1 /* performance.png */,
+				D2E46EF72318B339000DEF26 /* pencil.png */,
+				D27DF5B22321F2450043FD89 /* foodcafe.png */,
+				D28731B223389102003ED386 /* profile.png */,
+				D26DAD292317A2C600C244A6 /* back.png */,
+				D26DAD2A2317A2C600C244A6 /* sidemenu.png */,
+				D26DAD2523179ECA00C244A6 /* ProfileCamera.png */,
+				D26DAD2623179ECB00C244A6 /* userProfile.png */,
+				D26DAD2323179E5C00C244A6 /* couple.png */,
+				D26DAD1F23179C5300C244A6 /* Main.png */,
+				D27DF5B42321F6EC0043FD89 /* left-arrow.png */,
+				D2C8B46C2313AFDD008EF028 /* hand.png */,
+				D271477E22FABA3C00866B39 /* map2.png */,
 				8B833CF222F92A5700133316 /* sunny.png */,
-				8BB69B4522F2C7F600C43700 /* couple.png */,
+				D27DF5C22322400B0043FD89 /* right-arrow.png */,
 				8BB69B3D22F2AE3D00C43700 /* map.png */,
 				8BB69B3B22F2AE1700C43700 /* weather.png */,
 				8B7E59B322EDB3DC00EDC902 /* datelocation.png */,
@@ -132,25 +256,59 @@
 		8B997C8022EC253600D344C0 /* TeamProject */ = {
 			isa = PBXGroup;
 			children = (
-				8B997C8122EC253600D344C0 /* AppDelegate.swift */,
-				8B833CF622F9474900133316 /* SideMenuNavigationController.swift */,
-				8B833CF822F947DF00133316 /* SideMenuViewController.swift */,
+				D271478022FAC61900866B39 /* Login */,
+				D271478122FAC62C00866B39 /* SideMenu */,
+				8BDB76872359CD710049CDC9 /* Extension */,
+				8B57E2FF235442EA0013BEF5 /* Movie */,
+				8B57E3022354432F0013BEF5 /* DatePlace */,
+				8B57E303235443410013BEF5 /* Performance */,
+				8B57E301235443120013BEF5 /* FoodCafe */,
+				8B7E599022ED82D200EDC902 /* images */,
 				8B997C8322EC253600D344C0 /* FirstViewController.swift */,
-				8B997C9322EC283400D344C0 /* LoginViewController.swift */,
 				8BAA2F3D22EFDD9D0045D78F /* MainViewController.swift */,
 				8B997C9722EC325D00D344C0 /* KategorieViewController.swift */,
+				D271476522FAA98800866B39 /* CollectionViewCell.swift */,
+				D2E46EF92318FF00000DEF26 /* PageChangeViewController.swift */,
+				D26DAD352317CED700C244A6 /* PageController.swift */,
+				D2F4510C22FBFB98009AA412 /* TableViewCell.swift */,
+				8B997C8122EC253600D344C0 /* AppDelegate.swift */,
 				8B997C8522EC253600D344C0 /* Main.storyboard */,
-				8BD14BD922F1575D00DCAB9E /* AlertExtension.swift */,
-				8B833CF022F9284A00133316 /* WeatherViewController.swift */,
-				8B7E598C22ED686000EDC902 /* CreateIDViewController.swift */,
 				8B997C8A22EC253700D344C0 /* LaunchScreen.storyboard */,
 				8BAA2F4922F0100A0045D78F /* Briging-Header.h */,
 				8B997C8D22EC253700D344C0 /* Info.plist */,
 				8B7E598E22ED7AA100EDC902 /* GoogleService-Info.plist */,
 				8B997C8822EC253700D344C0 /* Assets.xcassets */,
-				8B7E599022ED82D200EDC902 /* images */,
 			);
 			path = TeamProject;
+			sourceTree = "<group>";
+		};
+		8BDB76872359CD710049CDC9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D2D2F1B52334802A0048BA05 /* extension.swift */,
+				8BD14BD922F1575D00DCAB9E /* AlertExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D271478022FAC61900866B39 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8B997C9322EC283400D344C0 /* LoginViewController.swift */,
+				8B7E598C22ED686000EDC902 /* CreateIDViewController.swift */,
+				D26DAD2123179E1300C244A6 /* ForgotPasswordViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D271478122FAC62C00866B39 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				8B833CF622F9474900133316 /* SideMenuNavigationController.swift */,
+				8B833CF822F947DF00133316 /* SideMenuViewController.swift */,
+				D27DF5B6232209F40043FD89 /* LikeViewController.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		FC36C754DFF8245181746908 /* Frameworks */ = {
@@ -223,21 +381,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BB69B4622F2C7F600C43700 /* couple.png in Resources */,
+				D26DAD2C2317A2C600C244A6 /* sidemenu.png in Resources */,
 				8B7E59B422EDB3DD00EDC902 /* datelocation.png in Resources */,
+				D2187AFE231D0D4700141001 /* food2.png in Resources */,
+				D2E46EF82318B339000DEF26 /* pencil.png in Resources */,
+				D2187AFF231D0D4700141001 /* balloon2.png in Resources */,
 				8BB69B3E22F2AE3D00C43700 /* map.png in Resources */,
 				8B7E598F22ED7AA200EDC902 /* GoogleService-Info.plist in Resources */,
 				8BB69B3C22F2AE1700C43700 /* weather.png in Resources */,
+				D27DF5B52321F6EC0043FD89 /* left-arrow.png in Resources */,
 				8B997C8C22EC253700D344C0 /* LaunchScreen.storyboard in Resources */,
+				D2187AF9231D0CCE00141001 /* movie2.png in Resources */,
 				8B7E59AE22EDB18B00EDC902 /* movie.png in Resources */,
+				D27DF5BF232233820043FD89 /* likeon.png in Resources */,
+				D26DAD2823179ECC00C244A6 /* userProfile.png in Resources */,
+				D26DAD2023179C5300C244A6 /* Main.png in Resources */,
+				D27DF5BD232231280043FD89 /* likeoff.png in Resources */,
+				D26DAD2B2317A2C600C244A6 /* back.png in Resources */,
 				8B833CF322F92A5700133316 /* sunny.png in Resources */,
 				8B997C8922EC253700D344C0 /* Assets.xcassets in Resources */,
+				D28731B323389102003ED386 /* profile.png in Resources */,
+				D2187AFD231D0D4700141001 /* datelocation2.png in Resources */,
 				8B7E59B222EDB36900EDC902 /* coffee.png in Resources */,
+				D27DF5B32321F2450043FD89 /* foodcafe.png in Resources */,
 				8B7E59AF22EDB18B00EDC902 /* food.png in Resources */,
-				8B833CFB22F94B1800133316 /* menu.png in Resources */,
 				8B7E59B022EDB18B00EDC902 /* balloon.png in Resources */,
+				D27DF5C32322400B0043FD89 /* right-arrow.png in Resources */,
 				8B7E59AD22EDB18B00EDC902 /* placeholder.png in Resources */,
+				D26DAD2423179E5C00C244A6 /* couple.png in Resources */,
+				D25E8C1822FD515900E42EC1 /* performance.png in Resources */,
+				D2C8B46D2313AFDD008EF028 /* hand.png in Resources */,
 				8B997C8722EC253600D344C0 /* Main.storyboard in Resources */,
+				D26DAD2723179ECC00C244A6 /* ProfileCamera.png in Resources */,
+				D271477F22FABA3C00866B39 /* map2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,16 +483,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2261AEC2330DB51004601BB /* DatePlaceInformationViewController.swift in Sources */,
 				8B997C9422EC283400D344C0 /* LoginViewController.swift in Sources */,
+				D2F4510D22FBFB98009AA412 /* TableViewCell.swift in Sources */,
 				8BAA2F3E22EFDD9D0045D78F /* MainViewController.swift in Sources */,
+				D271476222FAA95500866B39 /* MovieViewController.swift in Sources */,
 				8B997C8422EC253600D344C0 /* FirstViewController.swift in Sources */,
+				D26DAD2E2317B7EA00C244A6 /* FoodCafeViewController.swift in Sources */,
 				8B833CF722F9474900133316 /* SideMenuNavigationController.swift in Sources */,
+				D2261AED2330DB89004601BB /* DatePlaceViewController.swift in Sources */,
 				8B7E598D22ED686000EDC902 /* CreateIDViewController.swift in Sources */,
 				8B997C8222EC253600D344C0 /* AppDelegate.swift in Sources */,
-				8B833CF122F9284A00133316 /* WeatherViewController.swift in Sources */,
 				8B997C9822EC325D00D344C0 /* KategorieViewController.swift in Sources */,
+				D26DAD302317BB5800C244A6 /* FoodCafeInformationViewController.swift in Sources */,
+				D257785D23012E66009613E4 /* PerformanceInformationViewController.swift in Sources */,
+				D26DAD342317CE6F00C244A6 /* FoodCafePageViewController.swift in Sources */,
+				D271476422FAA95500866B39 /* MovieInformationViewController.swift in Sources */,
+				D27DF5B7232209F40043FD89 /* LikeViewController.swift in Sources */,
+				D26DAD362317CED700C244A6 /* PageController.swift in Sources */,
+				D271476622FAA98800866B39 /* CollectionViewCell.swift in Sources */,
 				8B833CF922F947DF00133316 /* SideMenuViewController.swift in Sources */,
 				8BD14BDA22F1575D00DCAB9E /* AlertExtension.swift in Sources */,
+				D2D2F1B62334802A0048BA05 /* extension.swift in Sources */,
+				D271476322FAA95500866B39 /* MovieSearchViewController.swift in Sources */,
+				D2E46EFA2318FF00000DEF26 /* PageChangeViewController.swift in Sources */,
+				D26DAD2223179E1300C244A6 /* ForgotPasswordViewController.swift in Sources */,
+				D2F4510B22FBEA74009AA412 /* PerformanceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,18 +659,22 @@
 			baseConfigurationReference = 18299E86337E0D0586FD2E2A /* Pods-TeamProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TeamProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jo.TeamProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TeamProject/Briging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -490,18 +686,22 @@
 			baseConfigurationReference = 0E55AEE980E4FD00BEFBE02F /* Pods-TeamProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TeamProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jo.TeamProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TeamProject/Briging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
